@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Ajax Jquery</title>
+
+    <script
+			  src="https://code.jquery.com/jquery-3.6.0.js"
+			  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+			  crossorigin="anonymous">
+            
+    </script>
+		
+</head>
+<body>
+
+    <div class="judul">
+        <h1>Belajar Ajax Jquery</h1>
+        <p>Sumber : <a href="https://cakdunme.blogspot.com" target="_blank">Cakdun Blog</a></p>
+        <p>Dwonload : <a href="#" target="_blank">Full Source code</a></p>
+    </div>
+
+    <hr>
+
+    <button>Tampilkan data.txt</button>
+
+    <hr>
+
+    <div class="hasil">
+        <h1></h1>
+
+    </div>
+
+<script>
+    $('document').ready(function(){
+        
+        // JIKA BUTTON DI KLIK LOAD data.txt DAN TAMPILKAN KE
+        // DALAM hasil
+        $('button').on('click',function(){
+            
+            // JALANKAN AJAX JQUERY
+            $.ajax({
+                url:"data/data.txt",
+                type:"POST",
+                success:function(dataHasil){
+
+                    // Pastekan data tangkapan ajax ke dalam hasil
+                    $('.hasil h1').html(dataHasil);
+
+                }
+            });
+
+        });
+    });
+</script>
+
+
+    
+</body>
+</html>
